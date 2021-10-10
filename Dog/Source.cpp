@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include <math.h>
 #include <GL/glut.h>
 
@@ -181,6 +183,8 @@ void menuOptions(int selection)
 		// Change side/front camera view
 		sideView = !sideView;
 	}
+	else if (selection == 7)
+		exit(0);
 	else
 	{
 		// Start selected animation
@@ -196,12 +200,13 @@ void menu()
 {
 	int menu;
 	glutCreateMenu(menuOptions);
-	glutAddMenuEntry("Bend front leg", 1);
-	glutAddMenuEntry("Lift on hind legs", 2);
-	glutAddMenuEntry("Bend neck-head", 3);
-	glutAddMenuEntry("Wiggle tail", 4);
-	glutAddMenuEntry("Reset position", 5);
-	glutAddMenuEntry("Change camera", 6);
+	glutAddMenuEntry("Bend Front Leg", 1);
+	glutAddMenuEntry("Lift on Hind Legs", 2);
+	glutAddMenuEntry("Bend Neck-Head", 3);
+	glutAddMenuEntry("Wiggle Tail", 4);
+	glutAddMenuEntry("Reset Position", 5);
+	glutAddMenuEntry("Change Camera", 6);
+	glutAddMenuEntry("Shut Down", 7);
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
 
